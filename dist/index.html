@@ -4,26 +4,26 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>MY ROSTER</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<div>
 		<input id="team-input" placeholder="TEAM NAME">
-		<button onclick="fetchTeamBtn()"">GET ROSTER</button>
+		<button onclick="fetchTeamBtn()">GET ROSTER</button>
 	</div>
 
-	<div class="contanier">
 		<div class="team-container"></div>
-	</div>
 
 	<script id="team-template" type="text/x-handlebars-template">
+		{{#each data}}
         <div class="play-info">
-			{{#each player}}
          		<p> {{firstName}} {{lastName}} </p>
-         		<p> {{jersey}}</p>
+				 <p> {{jersey}}</p>
+				 <img class="player pic" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}">
 				<p>{{pos}}</p>
-			{{/each}}
-        </div>
-    </script>
+			</div>
+				{{/each}}
+		</script>
 
 	<script src="/handlebars/dist/handlebars.js"></script>
 	<script src="/jquery/dist/jquery.js"></script>

@@ -19,7 +19,9 @@ let playersData = []
 
 app.get("/teams/:teamName", function(req, res){
 	urllib.request('http://data.nba.net/10s/prod/v1/2018/players.json', function(err, response){
-		playersData = JSON.parse(response.toString()).league.standard
+		if ( response !== undefined) {
+			playersData = JSON.parse(response.toString()).league.standard
+		}
 	})
 		
 	const TeamName = req.params.teamName	
@@ -41,38 +43,6 @@ app.get("/teams/:teamName", function(req, res){
 })
 	
 	
-
-
-
-// 	const playerData = relevantPlayerData.map(playerD => {
-// 		const player = {}
-// 			player.firstName = playerD.firstName
-// 		//return player
-// 	}) 
-// 	res.send(playerData.player)
-// 	// firstName: relevantPlayerData.firstName,
-// 	// allTeamPlayers.push(playerData)
-// 	// res.send(allTeamPlayers)
-
-
-
-// 	// for(let playerData of playersData){
-// 	// 	if((playerData.teamId === teamToIDs[TeamName]) && (playerData.isActive)){
-// 	// 		const player = {
-// 	// 			firstName: playerData.firstName,
-//     //             lastName: playerData.lastName,
-//     //             jersey: playerData.jersey,
-//     //             pos: playerData.pos
-// 	// 		}
-// 	// 		allTeamPlayers.push(player)
-// 	// 		//res.send(player)
-// 	// 	}
-// 	// }
-// 	// //allTeamPlayers = players
-// 	// res.send(allTeamPlayers)
-// 	// //res.send(players)
-
-
 const port = 3000
 
 app.listen(port, function(){
