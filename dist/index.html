@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div>
+	<div id="search">
 		<input id="team-input" placeholder="TEAM NAME">
 		<button onclick="fetchTeamBtn()">GET ROSTER</button>
 	</div>
@@ -17,10 +17,13 @@
 	<script id="team-template" type="text/x-handlebars-template">
 		{{#each data}}
         <div class="play-info">
-         		<p> {{firstName}} {{lastName}} </p>
-				 <p> {{jersey}}</p>
+				 <span> {{firstName}} {{lastName}} </span>
+				 <br>
+				 <span> {{jersey}}</span>
+				 <br>
 				 <img class="player pic" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}">
-				<p>{{pos}}</p>
+				 <br>
+				<span>{{pos}}</span>
 			</div>
 				{{/each}}
 		</script>

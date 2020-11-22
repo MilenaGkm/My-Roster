@@ -1,0 +1,40 @@
+body{
+	font-weight: bold;
+	text-transform: uppercase;
+	display: grid;
+	grid-gap: 15px;
+}
+
+.team-container{
+    display:grid;
+    grid-template-columns:auto auto auto;
+	grid-gap: 10px;
+}
+
+.play-info{
+	background-color: rgb(255, 136, 0);
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: 1px 1px 5px #2c3e50;
+}
+
+img{
+	background-color: gainsboro;
+	width: 90%;
+	border-radius: 10px;
+	box-shadow: 1px 1px 5px #001aff;
+}
+
+#search{
+	display: grid;
+	grid-template: "i i i i i i i i  b";
+	grid-gap: 10px;
+}
+
+#team-input{
+	grid-area: i;
+}
+
+button{
+	grid-area: b;
+}
